@@ -1,3 +1,4 @@
+import * as path from 'path';
 import { EggAppConfig, EggAppInfo, PowerPartial } from 'egg';
 
 export default (appInfo: EggAppInfo) => {
@@ -13,6 +14,31 @@ export default (appInfo: EggAppInfo) => {
   // add your special config in here
   const bizConfig = {
     sourceUrl: `https://github.com/eggjs/examples/tree/master/${appInfo.name}`,
+  };
+
+  config.security = {
+    domainWhiteList: [
+      'localhost:4200',
+    ],
+    csrf: {
+      enable: false,
+    },
+  };
+
+  config.cors = {
+    credentials: true,
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
+  };
+
+  config.logger = {
+    consoleLevel: 'DEBUG',
+    dir: path.join(appInfo.baseDir, 'logs'),
+  };
+
+  // 登录 请求中字段配置
+  config.passportLocal = {
+    usernameField: 'username',
+    passwordField: 'password',
   };
 
   // the return config will combines to EggAppConfig

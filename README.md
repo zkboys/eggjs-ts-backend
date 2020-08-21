@@ -31,3 +31,7 @@ $ npm start
 
 - Node.js 8.x
 - Typescript 2.8+
+
+## TODO
+- [ ] 使用 sequelize-typescript
+- [ ] 封装一个路由装饰器 https://github.com/Foveluy/egg-blueprint
