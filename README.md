@@ -35,3 +35,4 @@ $ npm start
 ## TODO
 - [ ] 使用 sequelize-typescript
 - [ ] 封装一个路由装饰器 https://github.com/Foveluy/egg-blueprint
+- [ ] swagger 文档
